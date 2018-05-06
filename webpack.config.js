@@ -18,7 +18,7 @@ let webpackConfig = {
             test: /\.vue$/,
             loader: 'vue-loader',
             options: {
-                //extractCSS:true
+                extractCSS:true
             }
         }, {
             test: /\.js$/,
@@ -26,10 +26,13 @@ let webpackConfig = {
         }, {
             test: /\.css$/,
             use: [
-                'vue-style-loader',
-                'css-loader'
+              'vue-style-loader',
+              'style-loader',
+              { loader: 'css-loader', options: { importLoaders: 1 } },
+              'postcss-loader'
             ]
-        }, {
+          },
+        {
             test: /\.(png|jpg|gif|eot|woff|woff2|ttf|svg|otf)$/,
             use: [{
                 loader: 'file-loader',

@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import HelloWorld from '../components/HelloWorld';
+import Course from '../components/course/Course.vue';
 import Test from '../components/test/Test.vue';
 import Topics from '../components/Topics';
 Vue.use(Router);
@@ -10,7 +10,7 @@ export function createRouter() {
         mode:'history',
         routes: [{
             path: '/',
-            component: HelloWorld
+            component: Course
         }, {
             path: '/test',
             component: Test
